@@ -25,3 +25,4 @@ dir > /dev/shm (wget any script in this dir)
 ```
 
 Note: you can also wget or curl in /tmp directory 
+# If you see an error 'No module named SimpleHTTPServer' it's because Python SimpleHTTPServer has been migrated to python http.server module in python 3
