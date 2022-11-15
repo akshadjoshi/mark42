@@ -6,6 +6,10 @@
 ```bash
  python3 -m server 8000
 ```
+```bash 
+python3 -m http.server (portnumber)
+
+```
 
 **on the mac so obtained/revershell**
 
