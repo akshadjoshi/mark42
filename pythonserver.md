@@ -4,7 +4,7 @@
   (open the server in the dir you have the scripts so that it will wget all the files of the dir on the mac)
 
 ```bash
- python3 -m server 8000
+  python -m SimpleHTTPServer (portnumber)
 ```
 ```bash 
 python3 -m http.server (portnumber)
