@@ -39,3 +39,9 @@ and then
 >stty raw -echo; fg
 
 >PRESS 'ENTER' TWICE TO GET BACK
+
+
+Note: don't forget to set environment (if you use script cmd) 
+```bash
+export TERM=xterm-256color
+```
