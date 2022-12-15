@@ -34,3 +34,50 @@ sudo apt --only-upgrade install <packagename/applicationname/toolname>
 
 # this commands comes to play because sudo apt upgrade is not considered as ideal to use all the time on your pc 
 ```
+ 
+**if GUI fails in KALI Linux after apt upgrade**
+
+`while installing fresh Kali Linux when you do sudo apt upgrade and restart your pc and it does not load GUI and you can't access CLI also do this`
+
+Press "e" on your keyboard as soon as your grub loader boots kali, what it will do is take you to grub rescue 
+
+Now Cursor 'down' to the line that starts with **"linux /boot/**
+
+Cursor right until the cursor is positioned at the end of the line where it says **quiet** or you can also see something like **quite splash**
+
+Use the backspace key to delete the following characters:
+
+```sh
+"ro initrd=/install/gtk/initrd.gz quiet"
+
+OR # can see either of the case
+
+"ro initrd=/install/gtk/initrd.gz quiet splash"
+```
+
+And type **rw init=/bin/bash**
+
+Press Ctrl and "x" to boot to single mode.
+
+`now you will be prompted with a cli`
+ 
+> uninstall/purge gdm3 
+ 
+ ```bash 
+ sudo apt purge gdm3
+ ```
+ 
+ ```bash
+ sudo tasksel    # select by hitting <SPACE>  press TAB and it will go to OK hit ENTER
+ ```
+  use following command to change default desktop environment
+ 
+ ```bash 
+ sudo update-alternatives --config x-session-manager
+```
+ Enter correct number which represents corresponding desktop environments don't choose gnome because it created all the problem in the first place
+ 
+ ```bash
+ sudo reboot
+ or exit     # to restart
+ ```
