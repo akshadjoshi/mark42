@@ -32,7 +32,7 @@ make a dir name - .ssh(in the home folder of box)
 Note : 
 1. Always make the file under the name of 'authorized_keys' on the box/machine or else it won't work.
 2. Remember to give the correct permission number for execution. 
-
+<!-- https://phoenixnap.com/kb/ssh-permission-denied-publickey#:~:text=If%20you%20want%20to%20use,login%20in%20the%20sshd_config%20file.&text=In%20the%20file%2C%20find%20the,disable%20it%20by%20adding%20no%20. -->
 
 
 
