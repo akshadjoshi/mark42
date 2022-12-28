@@ -48,4 +48,5 @@ export TERM=xterm-256color
 #### pts vs tty
 
 pty - fake terminal (get this when take ssh connection)
+
 tty - terminal tag
