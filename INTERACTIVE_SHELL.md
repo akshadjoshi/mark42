@@ -45,3 +45,7 @@ Note: don't forget to set environment (if you use script cmd)
 ```bash
 export TERM=xterm-256color
 ```
+#### pts vs tty
+
+pty - fake terminal (get this when take ssh connection)
+tty - terminal tag
