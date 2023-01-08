@@ -1,11 +1,13 @@
-keys to press to select and copy text in vim editor
+**keys to press to select and copy text in vim editor**
 
 PRESS ctrl + v  (to enter visual block)
+
 PRESS y         (to copy)
+
 PRESS shift + p (to paste0)
 
 
-how to paste without loosing the alignment
+**how to paste without loosing the alignment**
 
 ```bash 
 vim <filename>
