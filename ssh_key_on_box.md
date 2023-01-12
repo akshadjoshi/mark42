@@ -17,10 +17,6 @@ make a dir name - .ssh(in the home folder of box)
  cat <file name>                     # (it will be with the extention of .pub)
 ```
 'paste the file contents on the box in **authorized_keys** file created earlier'
-> *on the Box*
-```bash
- chmod 600  authorized_keys
-```
 > *on our terminal*
 ```bash
  chomd 600 <file name>  # (this is the private key) 
