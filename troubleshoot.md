@@ -27,6 +27,27 @@ sudo apt purge gdm gdm3
 ```bash
 sudo apt install gdm3 ubuntu-desktop
 ```
+**virtual box error (rc=-1908)**
+
+this error occurs when your mac kernal is upgraded (due to apt upgrade) but the application is running on the previous kernal version 
+you need to upgrade the application and install the dependency in order to resolve the error
+
+
+```bash
+sudo apt install virtualbox-dkms 
+```
+
+then check the virtual box service
+
+```bash
+systemctl status virtualbox.service
+```
+restart the service
+
+```bash
+systemctl restart virtualbox.service
+```
+
 **to upgrade a single package**
 ```bash
 --apt list upgradable  # will give you list of packages that can upgraded aka has new version
