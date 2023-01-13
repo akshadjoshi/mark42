@@ -48,6 +48,7 @@ restart the service
 systemctl restart virtualbox.service
 ```
 
+
 **to upgrade a single package**
 ```bash
 --apt list upgradable  # will give you list of packages that can upgraded aka has new version
