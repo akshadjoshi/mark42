@@ -76,9 +76,10 @@ OR # can see either of the case
 
 "ro initrd=/install/gtk/initrd.gz quiet splash"
 ```
-
-And type **rw init=/bin/bash**
-
+Type this 
+```bash
+ rw init=/bin/bash
+```
 Press Ctrl and "x" to boot to single mode.
 
 `now you will be prompted with a cli`
