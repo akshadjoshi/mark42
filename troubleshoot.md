@@ -79,6 +79,10 @@ OR # can see either of the case
 Type this 
 ```bash
  rw init=/bin/bash
+ 
+ OR
+ 
+ rw single init=/bin/bash quiet
 ```
 Press Ctrl and "x" to boot to single mode.
 
