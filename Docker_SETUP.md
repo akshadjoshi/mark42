@@ -2,6 +2,28 @@ Docker cheatsheat
 
 I have taken example of game installation to bifurcate IMAGE & CONTAINER (Ignore the eg. if it offends you)
 
+
+# installing docker 
+
+`adding repo`
+
+```bash 
+ printf '%s\n' "deb https://download.docker.com/linux/debian bullseye stable" |
+  sudo tee /etc/apt/sources.list.d/docker-ce.list
+
+```
+
+`Import the gpg key`
+
+```bash
+curl -fsSL https://download.docker.com/linux/debian/gpg |
+  sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker-ce-archive-keyring.gpg
+```
+```bash
+sudo apt update
+
+sudo apt install -y docker-ce docker-ce-cli containerd.io
+```
 Need to **create the docker group and add your user**
 
 ```bash
