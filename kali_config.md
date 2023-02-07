@@ -40,7 +40,8 @@ THE **default** REPO
 ```bash
  deb http://kali.download/kali kali-rolling main contrib non-free
 ```
-**Replace the current repo's url with the mirror repo's url. (It will help speed up the downloading processes) But if it doesn't work and the downloading speed is slow, undo the changes in the file.**
+**Replace the current/default repo's url with the mirror repo's url. (It will help speed up the downloading processes) 
+But if it doesn't work and the downloading speed is slow, undo the changes in the file.**
 		
 ```bash
 apt update
@@ -72,7 +73,7 @@ apt install linux-headers-$(uname -r)
 [ -f /var/run/reboot-required ] && reboot -f
 ```
 
-**note:** The above commands will install Kali Linux on PC/Laptop with integrated graphics, you can skip the NVIDIA part and directly go to python installation 
+**note:** The above commands will install Kali Linux on PC/Laptop with integrated graphics, you can skip the NVIDIA part and directly go to [python installation](https://github.com/akshadjoshi/mark42/edit/main/kali_config.md#python) 
 
    # Installing NVIDIA DRIVERS.
 
@@ -120,10 +121,12 @@ apt install nvidia-xconfig nvidia-driver
 apt install nvidia-xconfig
 ```
 
-After the successful installation of NVIDIA driver, install "Cuda" from the official NVIDIA website (Cuda will start encoding in Kali Linux and it will     help run a few programs better).      
+**After the successful installation of NVIDIA driver, install [**'Cuda'**](https://developer.nvidia.com/cuda-downloads?target_os=Linux) from the official NVIDIA website**
+
+(Cuda will start encoding in Kali Linux and it will help run a few programs better).      
 
 
-> If the drivers are not working properly or if it doesn't support dual monitor, you'll have to follow the following steps:
+*If the drivers are not working properly or if it doesn't support dual monitor, you'll have to follow the following steps:*
 
 **We have to find BusID of our NVIDIA card:**
     
@@ -131,7 +134,7 @@ After the successful installation of NVIDIA driver, install "Cuda" from the offi
 nvidia-xconfig --query-gpu-info | grep 'BusID :' | cut -d ' ' -f6
 ```
     
-It will show the BusID like **" PCI:1:0:0 "**
+It will show the **BusID** like **" PCI:1:0:0 "**
     
  **Open the file in Terminal**
     
@@ -218,7 +221,7 @@ ffmpeg -encoders 2>/dev/null | grep nvenc
 ```bash
 hashcat -b
 ```
-
+## PYTHON
 
 After the basic setup of Kali Linux you should check for the ***versions*** of **python** and **pip installed in Kali**. If the version is mis-matched, they will       conflict and won't work properly.
 
@@ -235,7 +238,7 @@ pip -V
 ```  
 We will install the **2.7 version of both Python and Pip**:   
 
-    Check for those versions if they are installed or not ny using the following commands:
+Check for those versions if they are installed or not ny using the following commands:
 
 **For Pyhon**
 
@@ -258,35 +261,37 @@ Install your pip2.7 version package.
 python2.7 get-pip.py
 ```
 
-27. **For pip**
+**For pip**
 
-     ```bash
-	pip -V 
-    ```  
-    Check And Download the latest pip version package https://bootstrap.pypa.io/pip/
+```bash
+pip -V 
+```  
+Check And Download the latest pip version package https://bootstrap.pypa.io/pip/
     
-    Install your latest version package.
-    ```bash
-    python get-pip.py
-    ```
+Install your latest version package.
+```bash
+python get-pip.py
+```
     
-28. **You can install Sublime editor from the official Sublime website.**
-    
-    ```bash
-	wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+**You can install Sublime editor from the official Sublime website.**
 
-	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+Caution ⚠ (If You install CUDA Toolkit So Comment it's Repositories) 
 
-	apt update (If You install CUDA Toolkit So Comment it's Repositories)
+```bash
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 
-	apt install sublime-text
-    ```
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 
-29. **After the successful installation of the above you can just install the basic tools that we need by the single command:**
+apt update 
 
-    ```bash
-	apt install build-essential cmake ninja-build libgtkmm-3.0-dev libgtksourceviewmm-3.0-dev libxml++2.6-dev libsqlite3-dev gettext libgspell-1-dev libcurl4-openssl-dev libuchardet-dev libfribidi-dev libvte-2.91-dev libfmt-dev libspdlog-dev rclone vim fonts-lato fonts-open-sans fonts-roboto fonts-mononoki fonts-indic grc python3 python-is-python3 gcc-multilib g++-multilib libtesseract-dev jq python3-pip openvpn network-manager-openvpn network-manager-openvpn-gnome  testssl.sh dirsearch wkhtmltopdf virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso golang remmina remmina-plugin-rdp remmina-plugin-secret youtube-dl flameshot ruby whois git curl libpcap-dev wget zip python3-dev pv dnsutils libssl-dev libffi-dev libxml2-dev libxslt1-dev zlib1g-dev nmap apt-transport-https lynx tor medusa xvfb libxml2-utils procps bsdmainutils libdata-hexdump-perl wget curl tmux git nmap masscan unzip chromium rsync coreutils net-tools htop prips xmlstarlet gnome-power-manager jython mesa-utils wmctrl
-    ```
+apt install sublime-text
+```
+
+**After the successful installation of the above you can just install the basic tools that we need by the single command:**
+
+```bash
+apt install build-essential cmake ninja-build libgtkmm-3.0-dev libgtksourceviewmm-3.0-dev libxml++2.6-dev libsqlite3-dev gettext libgspell-1-dev libcurl4-openssl-dev libuchardet-dev libfribidi-dev libvte-2.91-dev libfmt-dev libspdlog-dev rclone vim fonts-lato fonts-open-sans fonts-roboto fonts-mononoki fonts-indic grc python3 python-is-python3 gcc-multilib g++-multilib libtesseract-dev jq python3-pip openvpn network-manager-openvpn network-manager-openvpn-gnome  testssl.sh dirsearch wkhtmltopdf virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso golang remmina remmina-plugin-rdp remmina-plugin-secret youtube-dl flameshot ruby whois git curl libpcap-dev wget zip python3-dev pv dnsutils libssl-dev libffi-dev libxml2-dev libxslt1-dev zlib1g-dev nmap apt-transport-https lynx tor medusa xvfb libxml2-utils procps bsdmainutils libdata-hexdump-perl wget curl tmux git nmap masscan unzip chromium rsync coreutils net-tools htop prips xmlstarlet gnome-power-manager jython mesa-utils wmctrl
+```
       
 ### Caution⚠   
 
@@ -322,8 +327,8 @@ apt autoclean
 because if you do there might be chances of **mis-configuration or versions mis-matching** and Kali will not work properly after that.*
 
 
-=======
-After all this, the Basic SetUp for Kali Linux is complete and you're good to go!!
+===========================================================================================================
+**After all this, the Basic SetUp for Kali Linux is complete and you're good to go!!**
 
 
 
@@ -383,7 +388,7 @@ systemctl start touchegg.service
 systemctl enable touchegg.service
 ```
 
-**for the tool to work you need [GNOME shell integration](https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep) on your browser**
+*NOTE:* **for the tool to work you need [GNOME shell integration](https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep) on your browser**
 
 Add the extention to your browser and open the extenstion search for [X11](https://extensions.gnome.org/extension/4033/x11-gestures/) `toggle it to ON`
 <B>
@@ -417,3 +422,8 @@ synclient tapbutton1=1
 ```
 
 **restart you laptop**
+
+
+
+throughout the code wherever you see text in [this fomat]() it contains important URL links for respective tools or commands
+OPEN the links with **'ctl key pressed while you click'** so that it will **open in new tab**
