@@ -31,7 +31,15 @@ apt install apt-transport-https
 ```bash
 vim /etc/apt/sources.list 
 ```
+THE **default** REPO
+```bash
+ deb http://http.kali.org/kali kali-rolling main contrib non-free
+```
+**Fast** REPO
 
+```bash
+ deb http://kali.download/kali kali-rolling main contrib non-free
+```
 **Replace the current repo's url with the mirror repo's url. (It will help speed up the downloading processes) But if it doesn't work and the downloading speed is slow, undo the changes in the file.**
 		
 ```bash
@@ -64,7 +72,7 @@ apt install linux-headers-$(uname -r)
 [ -f /var/run/reboot-required ] && reboot -f
 ```
 
-**note:** `The above commands will install Kali Linux on PC/Laptop with integrated graphics, you can skip the NVIDIA part and directly go to python installation` 
+**note:** The above commands will install Kali Linux on PC/Laptop with integrated graphics, you can skip the NVIDIA part and directly go to python installation 
 
    # Installing NVIDIA DRIVERS.
 
@@ -102,19 +110,20 @@ lsmod | grep -i nouveau
 
 **When the nouveau is disabled Install NVIDIA driver from Kali Linux's repo:**
 
-    ```bash
-	apt install nvidia-xconfig nvidia-driver
-    ```
+```bash
+apt install nvidia-xconfig nvidia-driver
+```
 
 **If the command shows error just give the following command(Optional Command)**
 
-    ```bash
-	apt install nvidia-xconfig
-    ``` 
-    After the successful installation of NVIDIA driver, install "Cuda" from the official NVIDIA website (Cuda will start encoding in Kali Linux and it will     help run a few programs better).      
+```bash
+apt install nvidia-xconfig
+```
+
+After the successful installation of NVIDIA driver, install "Cuda" from the official NVIDIA website (Cuda will start encoding in Kali Linux and it will     help run a few programs better).      
 
 
-    > If the drivers are not working properly or if it doesn't support dual monitor, you'll have to follow the following steps:
+> If the drivers are not working properly or if it doesn't support dual monitor, you'll have to follow the following steps:
 
 **We have to find BusID of our NVIDIA card:**
     
@@ -165,7 +174,7 @@ EndSection
 **Now we have to create some scripts according to our display manager**
     
 ```bash
-	vim /usr/share/gdm/greeter/autostart/optimus.desktop
+vim /usr/share/gdm/greeter/autostart/optimus.desktop
 ```
    - **Copy This Code**
 
@@ -211,7 +220,8 @@ hashcat -b
 ```
 
 
-**After the basic setup of Kali Linux you should check for the versions of python and pip installed in Kali. If the version is mis-matched, they will       conflict and won't work properly.
+After the basic setup of Kali Linux you should check for the ***versions*** of **python** and **pip installed in Kali**. If the version is mis-matched, they will       conflict and won't work properly.
+
 **To check the latest version of python use the command:**
 
 ```bash
@@ -282,127 +292,43 @@ python2.7 get-pip.py
 
 -   **In case of the mis-configuration or any error, if you want to remove the NVIDIA drivers just follow the commands mentioned below and the drivers will be removed:**
 
-    ```bash
-    apt-get remove --purge nvidia*
+```bash
+apt-get remove --purge nvidia*
 
-    rm -rf /etc/X11/xorg.conf
+rm -rf /etc/X11/xorg.conf
         
-    dpkg --configure -a
+dpkg --configure -a
         
-    apt autoremove 
-    ```
+apt autoremove 
+```
 
 
--   **After the successful installation of NVIDIA drivers and everything, don't run the following commands as it can result in the deletion if the drivers.**
+**After the successful installation of NVIDIA drivers and everything,** 
 
-    ```bash
-	apt update
+**DON't run the following commands as it can result in the deletion if the drivers.**
+
+```bash
+apt update
  	
-	apt upgrade
+apt upgrade
  	
-	apt autoremove
+apt autoremove
  	
-	apt autoclean
-    ```
+apt autoclean
+```
 
-*After the setup is complete, don't update or upgrade the version of Kali Linux until it is extremely necessary because if you do there might be chances of mis-configuration or versions mis-matching and Kali will not work properly after that.*
+**After the setup is complete, don't update or upgrade the version of Kali Linux until it is extremely necessary** 
 
-
-## Multi gesture  in Kali Linux.  
-
-<B>`To get multi-gesture functionality on the trackpad in Kali Linux, you need touchegg tool.`
-  </B>
-  
- You don't get the tool in repo so you need the download the `.deb` package via its **[github releases](https://github.com/JoseExposito/touchegg/releases)**
-
- Once you have **downloaded** the package install it. (there are **2 ways to install** the *package*)
-
--  By **apt.**
-
-    ```bash
-    wget https://github.com/JoseExposito/touchegg/releases/download/2.0.16/touchegg_2.0.16_amd64.deb
-    ```
-    ```bash
-    apt install ./touchegg_2.0.16_amd64.deb
-    ```
-
- 
--   By **dpkg.**
-
-     ```bash
-    wget https://github.com/JoseExposito/touchegg/releases/download/2.0.16/touchegg_2.0.16_amd64.deb
-    ```
-    ```bash
-    dpkg --install ./touchegg_2.0.16_amd64.deb
-    ```
-    ```bash
-    sudo apt --fix-broken install
-    ```
-
--   **Check the status of the service and start it.**
-
-    ```bash
-    systemctl status touchegg.service
-    ```
-
-    ```bash
-    systemctl start touchegg.service
-    ```
-
--   **Enable the service**
-
-    ```bash
-    systemctl enable touchegg.service
-    ```
-
--   **Restart by using the command**
-
-    ```bash
-	[ -f /var/run/reboot-required ] && reboot -f
-    ```
-
-**For the tool to work you need [GNOME shell integration](https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep) on your browser.**
-
-Add the extention to your browser and open the extenstion search for [X11](https://extensions.gnome.org/extension/4033/x11-gestures/) `toggle it to ON`
-
-**it will prompt you to install the extention approve it**
-
-*Restart your laptop, after restart try 3 fingure gesture to zoom out of the screen.*
-
-Can also customize the gestures accordingly in my opinion default just work fine.
+because if you do there might be chances of **mis-configuration or versions mis-matching** and Kali will not work properly after that.*
 
 
-
-
-## Right click not working in trackpad.
-
-When you install Kali Linux sometimes you come across a weird issue regarding the trackpad
-RIGHT click doesn't work as intended i.e. It does not show you the dialog box of copy,paste etc (the one by which you used to refresh your windows PC with)
-
--   **To bring it back:**
-
-    ```bash
-    apt update
-    ```
-    ```bash
-    apt install xserver-xorg-input-synaptics
-    ```
-
-    ```bash
-    synclient tapbutton1=1
-    ```
-
--   **Restart by using the command**
-
-    ```bash
-	[ -f /var/run/reboot-required ] && reboot -f
-    ```
-
-**After all this, the Basic SetUp for Kali Linux is complete and you're good to go!!**
-=======
-**After all this, the Basic SetUp for Kali Linux is complete and you're good to go!!**
 =======
 After all this, the Basic SetUp for Kali Linux is complete and you're good to go!!
+
+
+
+
+
 
 
 ## multi gesture  in Kali Linux  
@@ -410,29 +336,37 @@ After all this, the Basic SetUp for Kali Linux is complete and you're good to go
 <B>`To get multi-gesture functionality on the trackpad in Kali Linux, you need touchegg tool `
   </B>
   
- You don't get the tool in repo so you need the download the `.deb` package via its [github releases](https://github.com/JoseExposito/touchegg/releases)  
+ You **don't get the tool in repo** so you need the download the `.deb` package via its [github releases](https://github.com/JoseExposito/touchegg/releases)  
 
  Once you have **downloaded** the package install it. (there are **2 ways to install** the *package*)
  
+- by **apt**
+
+```bash
+wget https://github.com/JoseExposito/touchegg/releases/download/2.0.16/touchegg_2.0.16_amd64.deb
+```
+
+```bash
+sudo apt install ./(downloaded package of touchegg)
+```
+`if you will install the package via apt it will automatically install the dependencies required for the package`
+
+
+
+If you want the **latest version** don't wget just download it via [github releases](https://github.com/JoseExposito/touchegg/releases)
+
+
 - by **dpkg**
 
 ```bash
 sudo dpkg --install ./touchegg_2.0.14_amd64.deb
-
-
-#   ./(package name) will work only if you are in the folder/directory where the package is downloaded
-
-# you might not get the relevant dependencies need for the package to work properly for that type:
 ```
+<B>`./(package name) will work only if you are in the folder/directory where the package is downloaded`</B>
+
+`you might not get the relevant dependencies need for the package to work properly for that type:`
+
 ```bash
 sudo apt --fix-broken install
-```
-- by **apt**
-
-```bash
-sudo apt install ./(downloaded package of touchegg)
-
-# if you will install the package via apt it will automatically install the dependencies required for the package 
 ```
 
 **check the status of the service and start it**
