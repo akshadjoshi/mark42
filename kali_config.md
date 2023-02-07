@@ -123,7 +123,7 @@ apt install nvidia-xconfig
 
 **After the successful installation of NVIDIA driver, install [**'Cuda'**](https://developer.nvidia.com/cuda-downloads?target_os=Linux) from the official NVIDIA website**
 
-(Cuda will start encoding in Kali Linux and it will help run a few programs better).      
+`(Cuda will start encoding in Kali Linux and it will help run a few programs better).`      
 
 
 *If the drivers are not working properly or if it doesn't support dual monitor, you'll have to follow the following steps:*
