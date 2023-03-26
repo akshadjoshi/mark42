@@ -74,10 +74,20 @@ sudo apt-get install xserver-xorg-input-synaptics
 ```bash
 synclient tapbutton1=1
 ```
-
 **restart you laptop**
 
+# troubleshoot if synclient keeps on resetting after restart
 
+```bash
+Section "InputClass"
+    Identifier "touchpad catchall"
+    Driver "synaptics"
+    MatchIsTouchpad "on"
+    Option "PalmMinZ" "100"
+    Option "PalmMinWidth" "1"
+    Option "PalmDetect" "1"
+EndSection
+```
 
 
 
