@@ -4,5 +4,5 @@ echo "" > test.txt
 ```
 - to **add content** in a file
 ```bash
-echo 
+ echo 'hello world' >> test.txt
 ```
