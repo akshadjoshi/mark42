@@ -6,3 +6,7 @@ echo "" > test.txt
 ```bash
  echo 'hello world' >> test.txt
 ```
+- to get **exit codes**
+```bash
+echo $?
+```
