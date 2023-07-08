@@ -10,3 +10,7 @@ chsh <username> -s  $(which bash)
 ```bash
 vim $(which b-tooth)
 ```
+> note: these will work if the script or binary is in $PATH
+```bash
+sudo mv $(which b-tooth) .
+```
