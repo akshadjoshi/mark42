@@ -6,3 +6,7 @@ subl $(pwd)
 ```bash
 chsh <username> -s  $(which bash)
 ```
+- **to edit scripts**
+```bash
+vim $(which b-tooth)
+```
