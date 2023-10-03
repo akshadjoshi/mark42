@@ -23,5 +23,5 @@ echo "next line i want to add in file" >> file.txt
 ```
 ### printf 
 ```bash
-printf 'Studying hard will never fail you.\n' > file2.txt
+printf 'content of file.\n' > file.txt
 ```
