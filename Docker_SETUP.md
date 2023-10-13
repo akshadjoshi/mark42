@@ -2,6 +2,10 @@ Docker cheatsheat
 
 I have taken example of game installation to bifurcate IMAGE & CONTAINER (Ignore the eg. if it offends you)
 
+command to remove any conflicting files 
+```bash
+for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+```
 
 # installing docker 
 
