@@ -30,3 +30,4 @@ docker commit <container_name> <image name>
 ```
 do `docker ps` to know the container details in order to commit the changes you made (creating a database)
 
+don't use the docker run command again and again as it will create a new docker container everytime use this
