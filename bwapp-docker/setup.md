@@ -18,7 +18,15 @@ docker ps
 ```
 > visit the IP you will see an error of the database that is because you have not configured the webapp yet
 
-to configure :
+#### to configure :
 
 http://IP/install.php 
+
+now commit the changes you made to the docker container 
+
+**SYNTAX**
+```bash
+docker commit <container_name> <image name>
+```
+do `docker ps` to know the container details in order to commit the changes you made (creating a database)
 
