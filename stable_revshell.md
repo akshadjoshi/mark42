@@ -75,3 +75,62 @@ export TERM=xterm-256color
 pty - fake terminal (get this when take ssh connection)
 
 tty - terminal tag
+
+
+## ZSH
+
+### Python 3
+
+```bash
+python3 -c 'import pty;pty.spawn("/bin/bash")'
+```
+
+### Python 2
+```bash
+python -c 'import pty;pty.spawn("/bin/bash")'
+```
+
+>Press CTRL + Z
+
+- Print current terminal settings
+
+```bash
+stty -a | head -n1 | cut -d ';' -f 2-3 | cut -b2- | sed 's/;  /\n/'
+```
+
+- Switch to raw mode and resume the shell
+
+```bash
+stty raw -echo; fg
+```
+
+- Type **'reset'** and press **CTRL + D**
+
+  Setting specific environment variables for SHELL, TERM, and PATH.
+
+```bash
+export SHELL=bash
+export TERM=xterm-256color
+```
+
+- Set terminal rows and columns **(Replace <rows> and <columns> with your terminal dimensions)**
+
+```bash
+stty rows 37 columns 146
+```
+
+- Start an interactive bash shell
+
+```bash
+bash -i
+```
+
+- Additional environment configurations and PS1 assignment
+
+```bash
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export TERM=xterm
+export SHELL=bash
+cat /etc/profile; cat /etc/bashrc; cat ~/.bash_profile; cat ~/.bashrc; cat ~/.bash_logout; env; set
+export PS1='[\u@\h \W]\$ '
+```
