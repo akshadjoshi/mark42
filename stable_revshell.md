@@ -94,13 +94,13 @@ python -c 'import pty;pty.spawn("/bin/bash")'
 
 - Print current terminal settings
 
-```bash
+```sh
 stty -a | head -n1 | cut -d ';' -f 2-3 | cut -b2- | sed 's/;  /\n/'
 ```
 
 - Switch to raw mode and resume the shell
 
-```bash
+```sh
 stty raw -echo; fg
 ```
 
@@ -108,26 +108,26 @@ stty raw -echo; fg
 
   Setting specific environment variables for SHELL, TERM, and PATH.
 
-```bash
+```sh
 export SHELL=bash
 export TERM=xterm-256color
 ```
 
 - Set terminal rows and columns **(Replace <rows> and <columns> with your terminal dimensions)**
 
-```bash
+```sh
 stty rows 37 columns 146
 ```
 
 - Start an interactive bash shell
 
-```bash
+```sh
 bash -i
 ```
 
 - Additional environment configurations and PS1 assignment
 
-```bash
+```sh
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export TERM=xterm
 export SHELL=bash
